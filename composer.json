@@ -1,0 +1,13 @@
+{
+    "name": "pierre/classy",
+    "description": "Projet de formation en PHP orienté objet",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pierre Bretéché",
+            "email": "pbreteche@dawan.fr"
+        }
+    ],
+    "require": {}
+}
