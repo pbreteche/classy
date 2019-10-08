@@ -1,1 +1,5 @@
+# external code
 /vendor/
+
+# credentials
+/config/database.json
