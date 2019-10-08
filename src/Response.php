@@ -6,7 +6,7 @@ class Response
 
     private $status;
 
-    public function __construct(string $body, int $status=200)
+    public function __construct(string $body='', int $status=200)
     {
         $this->body = $body;
         $this->status = $status;
@@ -15,6 +15,9 @@ class Response
     public function send()
     {
         http_response_code($this->status);
-        echo $this->body;
+
+        if ($this->body) {
+            echo $this->body;
+        }
     }
 }
