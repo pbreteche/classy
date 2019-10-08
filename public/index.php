@@ -9,14 +9,10 @@ $reader = new UrlReader();
 // TODO: mettre la construction de la réponse dans une classe
 try {
     $id = $reader->parse();
+    $response = new Response('coucou, ça marche');
 }
 catch(Exception $e) {
-    $response = new Response();
-
-    $response->send('Cette page n\'existe pas', 404);
-    die;
+    $response = new Response('Cette page n\'existe pas', 404);
 }
 
-$response = new Response();
-
-$response->send('coucou, ça marche');
+$response->send();
