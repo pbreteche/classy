@@ -1,5 +1,6 @@
 <?php
 
+require_once SRC_DIR.'/AnnonceLoader.php';
 require_once SRC_DIR.'/Response.php';
 require_once SRC_DIR.'/UrlReader.php';
 
@@ -12,6 +13,8 @@ class Application
 
         try {
             $id = $reader->parse();
+            $loader = new AnnonceLoader();
+            $annonce = $loader->load($id);
             $response = new Response('coucou, ça marche');
         }
         catch(Exception $e) {
