@@ -5,6 +5,7 @@ class DatabaseConnexion
     private $dsn;
     private $username;
     private $password;
+    private $pdo;
 
     public function __construct(string $dsn, string $username, string $password)
     {
@@ -15,6 +16,12 @@ class DatabaseConnexion
 
     public function connect()
     {
-        new PDO($this->dsn, $this->username, $this->password);
+        $this->pdo = new PDO($this->dsn, $this->username, $this->password);
+        var_dump($this->pdo->errorInfo());
+    }
+
+    public function getPdo()
+    {
+        return $this->pdo;
     }
 }
