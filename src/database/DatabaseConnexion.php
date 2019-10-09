@@ -18,7 +18,12 @@ class DatabaseConnexion
 
     private function connect()
     {
-        $this->pdo = new \PDO($this->dsn, $this->username, $this->password);
+        $this->pdo = new \PDO(
+            $this->dsn,
+            $this->username,
+            $this->password,
+            array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
+        );
     }
 
     public function getPdo(): \PDO
