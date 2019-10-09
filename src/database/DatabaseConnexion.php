@@ -16,13 +16,17 @@ class DatabaseConnexion
         $this->password = $password;
     } 
 
-    public function connect()
+    private function connect()
     {
         $this->pdo = new \PDO($this->dsn, $this->username, $this->password);
     }
 
     public function getPdo(): \PDO
     {
+        if (!$this->pdo) {
+            $this->connect();
+        }
+
         return $this->pdo;
     }
 }

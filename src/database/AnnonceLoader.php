@@ -11,7 +11,6 @@ class AnnonceLoader
 
     public function __construct(DatabaseConnexion $connexion)
     {
-        $connexion->connect();
         $this->connexion = $connexion->getPdo();
     }
 
