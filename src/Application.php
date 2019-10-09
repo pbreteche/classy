@@ -2,6 +2,9 @@
 
 namespace App;
 
+
+use App\Exception\NotFoundException;
+
 class Application
 {
     public function run(): Response
@@ -22,8 +25,8 @@ class Application
             $annonce = $loader->load($id);
             $response = new Response('coucou, ça marche');
         }
-        catch(\Exception $e) {
-            $response = new Response('Cette page n\'existe pas', 404);
+        catch(NotFoundException $e) {
+            $response = new Response($e->getMessage(), 404);
         }
 
         return $response;
