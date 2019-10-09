@@ -4,6 +4,7 @@ namespace App;
 
 
 use App\Exception\NotFoundException;
+use App\html\Annonce;
 
 class Application
 {
@@ -23,7 +24,8 @@ class Application
             $id = $reader->parse();
             $loader = new AnnonceLoader($connexion);
             $annonce = $loader->load($id);
-            $response = new Response('coucou, ça marche');
+            $annonceHtml = new Annonce();
+            $response = new Response($annonceHtml->build($annonce));
         }
         catch(NotFoundException $e) {
             $response = new Response($e->getMessage(), 404);

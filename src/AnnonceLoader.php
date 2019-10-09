@@ -29,7 +29,6 @@ class AnnonceLoader
             throw new NotFoundException('Cette annonce n\'existe pas');
         }
 
-        var_dump($annonce);
         return $annonce;
     }
 }
