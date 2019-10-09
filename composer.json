@@ -9,5 +9,13 @@
             "email": "pbreteche@dawan.fr"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "php": "7.2",
+        "ext-json": "*"
+    }
 }

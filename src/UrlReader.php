@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class UrlReader
 {
 
@@ -14,7 +16,7 @@ class UrlReader
         }
 
         // pas de format d'url trouvé
-        throw new Exception('URL non reconnue');
+        throw new \Exception('URL non reconnue');
     }
 
     private function match(array $parts): bool

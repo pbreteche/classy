@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class DatabaseConnexion
 {
     private $dsn;
@@ -16,8 +18,7 @@ class DatabaseConnexion
 
     public function connect()
     {
-        $this->pdo = new PDO($this->dsn, $this->username, $this->password);
-        var_dump($this->pdo->errorInfo());
+        $this->pdo = new \PDO($this->dsn, $this->username, $this->password);
     }
 
     public function getPdo()
