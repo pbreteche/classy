@@ -31,4 +31,16 @@ class AnnonceLoader
 
         return $annonce;
     }
+
+    public function loadAll(): array
+    {
+        $statement = $this->connexion->prepare(
+            'SELECT id, title, content, publishedAt FROM Annonce'
+        );
+        $statement->execute();
+
+        $annonces = $statement->fetchAll(\PDO::FETCH_CLASS, Annonce::class);
+
+        return $annonces;
+    }
 }

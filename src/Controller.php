@@ -23,7 +23,10 @@ class Controller
 
     public function index()
     {
-        echo 'je suis dans index';
+        $loader = new AnnonceLoader($this->connection);
+        $annonces = $loader->loadAll();
+        $annonceHtml = new AnnonceHtml();
+        return new Response($annonceHtml->buildAll($annonces));
     }
 
     public function show(int $id): Response

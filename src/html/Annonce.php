@@ -13,4 +13,11 @@ class Annonce
         include APP_DIR.'/templates/annonce.phtml';
         return ob_get_clean();
     }
+
+    public function buildAll(array $annonces)
+    {
+        ob_start();
+        include APP_DIR.'/templates/index.phtml';
+        return ob_get_clean();
+    }
 }
